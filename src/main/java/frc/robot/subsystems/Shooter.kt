@@ -15,7 +15,7 @@ import edu.wpi.first.units.measure.Voltage
 
 class Shooter (private val config: ShooterConfiguration) {
     private val motorController = SparkMax(config.motorControllerId, SparkLowLevel.MotorType.kBrushless)
-    private val motorFollower = SparkMax(config.motorControllerId, SparkLowLevel.MotorType.kBrushless)
+    private val motorFollower = SparkMax(config.motorFollower, SparkLowLevel.MotorType.kBrushless)
 
 
     fun setVoltage(voltage: Voltage) {
