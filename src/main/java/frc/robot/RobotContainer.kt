@@ -10,6 +10,8 @@ import frc.robot.subsystems.ExampleSubsystem
 import frc.robot.subsystems.Shooter
 import frc.robot.subsystems.shooterConfiguration
 import edu.wpi.first.units.Units.Volts
+import edu.wpi.first.wpilibj2.command.InstantCommand
+import edu.wpi.first.wpilibj2.command.PrintCommand
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -48,6 +50,13 @@ object RobotContainer
 
         // Schedule `exampleMethodCommand` when the Xbox controller's B button is pressed,
         // cancelling on release.
-        driverController.leftTrigger().whileTrue(Commands.run({ shooter.setVoltage(Volts.of(3.0)) })).onFalse(Commands.run({ shooter.stopMotor() }))
+        driverController.leftTrigger().whileTrue(Commands.run({ shooter.setVoltage(Volts.of(8.0)) })).onFalse(InstantCommand({ shooter.stopMotor() }))
+
+        driverController.y().onTrue(Commands.run({ shooter.increaseVoltage() }))
+
+        driverController.x().onTrue(Commands.run({ shooter.decreaseVoltage() }))
+
+        driverController.rightTrigger().whileTrue(Commands.run({ shooter.setVoltage(Volts.of(-8.0)) })).onFalse(InstantCommand({ shooter.stopMotor() }))
     }
+
 }

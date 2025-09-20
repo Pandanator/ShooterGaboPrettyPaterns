@@ -7,15 +7,15 @@ import frc.robot.utils.RotationalDirection
 
 data class ShooterConfiguration(
     val motorControllerId: Int,
-    val motorFollower: Int,
+    val motorFollowerId: Int,
     val motorDirection: RotationalDirection,
     val motorCurrentLimit: Current,
     val neutralMode: IdleMode
 )
 
 val shooterConfiguration = ShooterConfiguration(
-    motorControllerId = 1,
-    motorFollower = 31,
+    motorControllerId = 22,
+    motorFollowerId = 21,
     motorDirection = RotationalDirection.Clockwise,
     motorCurrentLimit = Units.Amps.of(40.0),
     neutralMode = IdleMode.kBrake
