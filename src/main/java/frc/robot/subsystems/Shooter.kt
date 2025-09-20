@@ -30,7 +30,7 @@ class Shooter(private val config: ShooterConfiguration) : SubsystemBase() {
     }
 
     fun increaseVoltage() {
-        appliedVoltage += Volts.of(1.0)
+        appliedVoltage += Volts.of(1.1)
     }
 
     fun decreaseVoltage() {
