@@ -14,8 +14,14 @@ data class ShooterConfiguration(
 )
 
 val shooterConfiguration = ShooterConfiguration(
-    motorControllerId = 22,
-    motorFollowerId = 21,
+    //SHOOTER 1
+    //motorControllerId = 12,
+    //motorFollowerId = 6,
+
+    //SHOOTER 2
+    motorControllerId = 52,
+    motorFollowerId = 32,
+
     motorDirection = RotationalDirection.Clockwise,
     motorCurrentLimit = Units.Amps.of(40.0),
     neutralMode = IdleMode.kBrake

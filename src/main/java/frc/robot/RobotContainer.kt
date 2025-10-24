@@ -56,6 +56,8 @@ object RobotContainer
 
         driverController.x().onTrue(Commands.run({ shooter.decreaseVoltage() }))
 
+        driverController.a().onTrue(Commands.run({ shooter.stopMotor() }))
+
         driverController.rightTrigger().whileTrue(Commands.run({ shooter.setVoltage(Volts.of(-8.0)) })).onFalse(InstantCommand({ shooter.stopMotor() }))
     }
 
